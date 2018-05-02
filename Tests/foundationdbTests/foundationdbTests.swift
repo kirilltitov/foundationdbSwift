@@ -2,12 +2,12 @@ import XCTest
 @testable import foundationdb
 
 final class foundationdbTests: XCTestCase {
-    func openDatabase() {
+    func testOpenDatabase() {
 
         XCTAssertNoThrow(try Fdb.selectMaxApiVersion())
     }
 
     static var allTests = [
-        ("openDatabase", openDatabase),
+        ("openDatabase", testOpenDatabase),
     ]
 }

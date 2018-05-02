@@ -51,8 +51,10 @@ import CFoundationdb
 
 class Fdb {
     
-    static let ApiMinVersion : Int32 = 510
-    static let ApiMaxVersion : Int32 = 520
+    static let ApiMinVersion : Int32 = 13
+    static let ApiMaxVersion : Int32 = 510
+    
+    static let FdbApiVersion : Int32 = 510
     
     /// API version that was selected by the selectAPIVersion()
     /// call. This can be used to guard different parts of client code against different versions
@@ -145,11 +147,11 @@ class Fdb {
             }
         }
         
-        guard version > ApiMinVersion && version < ApiMaxVersion else {
+        guard version > ApiMinVersion || version < ApiMaxVersion else {
             throw FdbError.APIVersionNotSupported
         }
         
-        let err = fdb_select_api_version_impl(version,ApiMinVersion)
+        let err = fdb_select_api_version_impl(version,FdbApiVersion)
         
         guard err == 0 else {
             throw FdbError.APIVersionNotSupported
