@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"foundationdb::foundationdbPackageTests::ProductTarget" /* foundationdbPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_34 /* Build configuration list for PBXAggregateTarget "foundationdbPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_37 /* PBXTargetDependency */,
+			);
+			name = foundationdbPackageTests;
+			productName = foundationdbPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		7EE646D02098922F00783E5C /* libfdb_c.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE646CF2098922F00783E5C /* libfdb_c.dylib */; };
+		7EE646D22099042D00783E5C /* NetworkOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D12099042D00783E5C /* NetworkOptions.swift */; };
+		7EE646D42099162100783E5C /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D32099162100783E5C /* Cluster.swift */; };
+		7EE646D6209922BD00783E5C /* FutureCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D5209922BD00783E5C /* FutureCluster.swift */; };
+		7EE646D8209925C200783E5C /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D7209925C200783E5C /* Database.swift */; };
+		OBJ_24 /* FdbError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* FdbError.swift */; };
+		OBJ_25 /* Fdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Fdb.swift */; };
+		OBJ_32 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_43 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
+		OBJ_44 /* foundationdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* foundationdbTests.swift */; };
+		OBJ_46 /* foundationdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "foundationdb::foundationdb::Product" /* foundationdb.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EE646CC20988F0400783E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "foundationdb::foundationdb";
+			remoteInfo = foundationdb;
+		};
+		7EE646CD20988F0500783E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "foundationdb::foundationdbTests";
+			remoteInfo = foundationdbTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7EE646CF2098922F00783E5C /* libfdb_c.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfdb_c.dylib; path = ../../../../../../usr/local/lib/libfdb_c.dylib; sourceTree = "<group>"; };
+		7EE646D12099042D00783E5C /* NetworkOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOptions.swift; sourceTree = "<group>"; };
+		7EE646D32099162100783E5C /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
+		7EE646D5209922BD00783E5C /* FutureCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureCluster.swift; sourceTree = "<group>"; };
+		7EE646D7209925C200783E5C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		OBJ_10 /* Fdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fdb.swift; sourceTree = "<group>"; };
+		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_14 /* foundationdbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foundationdbTests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* FdbError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FdbError.swift; sourceTree = "<group>"; };
+		"foundationdb::foundationdb::Product" /* foundationdb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = foundationdb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"foundationdb::foundationdbTests::Product" /* foundationdbTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = foundationdbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				7EE646D02098922F00783E5C /* libfdb_c.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_46 /* foundationdb.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EE646CE2098922F00783E5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EE646CF2098922F00783E5C /* libfdb_c.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		OBJ_11 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* foundationdbTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_12 /* foundationdbTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_13 /* XCTestManifests.swift */,
+				OBJ_14 /* foundationdbTests.swift */,
+			);
+			name = foundationdbTests;
+			path = Tests/foundationdbTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_15 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"foundationdb::foundationdb::Product" /* foundationdb.framework */,
+				"foundationdb::foundationdbTests::Product" /* foundationdbTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_11 /* Tests */,
+				OBJ_15 /* Dependencies */,
+				OBJ_16 /* Products */,
+				7EE646CE2098922F00783E5C /* Frameworks */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* foundationdb */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* foundationdb */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* FdbError.swift */,
+				OBJ_10 /* Fdb.swift */,
+				7EE646D12099042D00783E5C /* NetworkOptions.swift */,
+				7EE646D32099162100783E5C /* Cluster.swift */,
+				7EE646D5209922BD00783E5C /* FutureCluster.swift */,
+				7EE646D7209925C200783E5C /* Database.swift */,
+			);
+			name = foundationdb;
+			path = Sources/foundationdb;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"foundationdb::SwiftPMPackageDescription" /* foundationdbPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_28 /* Build configuration list for PBXNativeTarget "foundationdbPackageDescription" */;
+			buildPhases = (
+				OBJ_31 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = foundationdbPackageDescription;
+			productName = foundationdbPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"foundationdb::foundationdb" /* foundationdb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_20 /* Build configuration list for PBXNativeTarget "foundationdb" */;
+			buildPhases = (
+				OBJ_23 /* Sources */,
+				OBJ_26 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = foundationdb;
+			productName = foundationdb;
+			productReference = "foundationdb::foundationdb::Product" /* foundationdb.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"foundationdb::foundationdbTests" /* foundationdbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_39 /* Build configuration list for PBXNativeTarget "foundationdbTests" */;
+			buildPhases = (
+				OBJ_42 /* Sources */,
+				OBJ_45 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_47 /* PBXTargetDependency */,
+			);
+			name = foundationdbTests;
+			productName = foundationdbTests;
+			productReference = "foundationdb::foundationdbTests::Product" /* foundationdbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "foundationdb" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"foundationdb::foundationdb" /* foundationdb */,
+				"foundationdb::SwiftPMPackageDescription" /* foundationdbPackageDescription */,
+				"foundationdb::foundationdbPackageTests::ProductTarget" /* foundationdbPackageTests */,
+				"foundationdb::foundationdbTests" /* foundationdbTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				7EE646D8209925C200783E5C /* Database.swift in Sources */,
+				OBJ_24 /* FdbError.swift in Sources */,
+				OBJ_25 /* Fdb.swift in Sources */,
+				7EE646D6209922BD00783E5C /* FutureCluster.swift in Sources */,
+				7EE646D42099162100783E5C /* Cluster.swift in Sources */,
+				7EE646D22099042D00783E5C /* NetworkOptions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_32 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_43 /* XCTestManifests.swift in Sources */,
+				OBJ_44 /* foundationdbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "foundationdb::foundationdbTests" /* foundationdbTests */;
+			targetProxy = 7EE646CD20988F0500783E5C /* PBXContainerItemProxy */;
+		};
+		OBJ_47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "foundationdb::foundationdb" /* foundationdb */;
+			targetProxy = 7EE646CC20988F0400783E5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CFoundationdb--6858558012694949989",
+					/usr/local/include/foundationdb,
+				);
+				INFOPLIST_FILE = foundationdb.xcodeproj/foundationdb_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = foundationdb;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = foundationdb;
+			};
+			name = Debug;
+		};
+		OBJ_22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CFoundationdb--6858558012694949989",
+					/usr/local/include/foundationdb,
+				);
+				INFOPLIST_FILE = foundationdb.xcodeproj/foundationdb_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = foundationdb;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = foundationdb;
+			};
+			name = Release;
+		};
+		OBJ_29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CFoundationdb--6858558012694949989",
+				);
+				INFOPLIST_FILE = foundationdb.xcodeproj/foundationdbTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = foundationdbTests;
+			};
+			name = Debug;
+		};
+		OBJ_41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CFoundationdb--6858558012694949989",
+				);
+				INFOPLIST_FILE = foundationdb.xcodeproj/foundationdbTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = foundationdbTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "foundationdb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_20 /* Build configuration list for PBXNativeTarget "foundationdb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_21 /* Debug */,
+				OBJ_22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_28 /* Build configuration list for PBXNativeTarget "foundationdbPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_29 /* Debug */,
+				OBJ_30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_34 /* Build configuration list for PBXAggregateTarget "foundationdbPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_35 /* Debug */,
+				OBJ_36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_39 /* Build configuration list for PBXNativeTarget "foundationdbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_40 /* Debug */,
+				OBJ_41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
