@@ -23,7 +23,7 @@ import CFoundationdb
 /// The foundationdb API is accessed with a call to selectAPIVersion(int).
 /// This call is required before using any other part of the API. The call allows
 /// an error to be thrown at this point to prevent client code from accessing a later library
-/// with incorrect assumptions from the current version. The API version documented here is version 520
+/// with incorrect assumptions from the current version. The API version documented here is version 510
 ///
 /// FoundationDB encapsulates multiple versions of its interface by requiring
 /// the client to explicitly specify the version of the API it uses. The purpose
@@ -51,9 +51,13 @@ import CFoundationdb
 
 class Fdb {
     
+    /// Minimum supported API version
     static let ApiMinVersion : Int32 = 13
+    
+    /// Maximum supported API version
     static let ApiMaxVersion : Int32 = 510
     
+    /// C Header defined version
     static let FdbApiVersion : Int32 = 510
     
     /// API version that was selected by the selectAPIVersion()
@@ -67,7 +71,14 @@ class Fdb {
     
     private static var singleton : Fdb? = nil
     
-    private static let staticlLock = DispatchSemaphore(value: 1)
+    private static let staticLock = DispatchSemaphore(value: 1)
+    
+    private let instanceLock = DispatchSemaphore(value: 1)
+    private let netLock = DispatchSemaphore(value: 1)
+    
+    private var runNetworkWorkItem : DispatchWorkItem?
+    
+    private let execQueue = DispatchQueue(label: "concurrentQueue", qos: .utility, attributes: .concurrent)
     
     /// Called only once to create the FDB singleton.
     private init(apiVersion : Int32) {
@@ -135,10 +146,10 @@ class Fdb {
     /// - returns: the FoundationDB API object
     static func selectAPIVersion(version : Int32) throws -> Fdb {
         
-        staticlLock.wait()
+        staticLock.wait()
         
         defer {
-            staticlLock.signal()
+            staticLock.signal()
         }
         
         if let singleton = Fdb.singleton {
@@ -148,13 +159,13 @@ class Fdb {
         }
         
         guard version > ApiMinVersion || version < ApiMaxVersion else {
-            throw FdbError.APIVersionNotSupported
+            throw FdbError.apiVersionNotSupported
         }
         
         let err = fdb_select_api_version_impl(version,FdbApiVersion)
         
         guard err == 0 else {
-            throw FdbError.APIVersionNotSupported
+            throw FdbError.fdbApiError(err, nil)
         }
         
         singleton = Fdb(apiVersion: version)
@@ -170,13 +181,48 @@ class Fdb {
     /// - throws: FDBException on errors encountered starting the FoundationDB networking engine
     /// IllegalStateException if the network had been previously stopped
     func createCluster() throws -> Cluster {
-        return createCluster(clusterFilePath : nil);
+        return try createCluster(clusterFilePath : nil);
     }
     
-    func createCluster(clusterFilePath : String?) -> Cluster {
-            //TODO
-            return Cluster()
+    ///
+    /// Connects to the cluster specified by the default fdb.cluster file
+    /// If the FoundationDB network has not been started, it will be started in the course of this call
+    /// as if startNetwork() had been called.
+    /// - returns: a CompletableFuture that will be set to a FoundationDB Cluster.
+    /// - throws: On errors encountered starting the FoundationDB networking engine or if
+    /// if the network had been previously stopped
+    func createCluster(clusterFilePath : String?) throws -> Cluster {
+        
+        instanceLock.wait()
+        
+        defer {
+            instanceLock.signal()
+        }
+        
+        if (!isConnected()) {
+            try startNetwork()
+        }
+        
+        guard let future = fdb_create_cluster(clusterFilePath) else {
+                throw FdbError.fdbApiError(0, nil)
+        }
+        
+        let futureCluster = try Future(future)
+        try futureCluster.wait()
+        
+        var clusterPointer : OpaquePointer?
+        
+        let err = fdb_future_get_cluster(future, &clusterPointer)
+            
+        guard err != 0 else {
+                throw FdbError.fdbApiError(err, nil)
+        }
+        
+        fdb_future_destroy(clusterPointer!)
+        
+        return Cluster(clusterPointer: clusterPointer!)
     }
+    
     
     /// Initializes networking, connects with the
     /// default fdb.cluster file and opens the database.
@@ -194,5 +240,53 @@ class Fdb {
     func open(clusterFilePath: String?) throws -> Database {
         return Database()
         //TODO
+    }
+    
+    private func startNetworkWorkItem() {
+        netLock.wait()
+        
+        guard !netStopped else {
+            return
+        }
+        
+        let err = fdb_run_network()
+        guard err != 0 else {
+            NSLog("Unhandled error in FoundationDB network thread: %v (%v)\n", err)
+            return
+        }
+        
+        defer {
+            netLock.signal()
+        }
+    }
+    
+    private func startNetwork() throws {
+        
+        guard !netStopped else {
+            throw FdbError.NetworkIsStopped
+        }
+        
+        guard netStarted else {
+            return
+        }
+        
+        let err = fdb_setup_network()
+        guard err == 0 else {
+            throw FdbError.fdbApiError(err, "fdb_setup_network")
+        }
+        
+        runNetworkWorkItem = DispatchWorkItem {
+            self.startNetworkWorkItem()
+        }
+        
+        execQueue.async(execute: runNetworkWorkItem!)
+        
+        netStarted = true
+    }
+    
+    /// Gets the state of the FoundationDB networking thread.
+    /// - returns: true if the FDB network thread is running, false otherwise.
+    func isConnected() -> Bool {
+        return netStarted && !netStopped
     }
 }

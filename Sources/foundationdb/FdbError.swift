@@ -19,6 +19,7 @@ import Foundation
 enum FdbError : Error {
     case APIVersionNotSet
     case APIDifferentVersionStarted
-    case APIVersionNotSupported
+    case apiVersionNotSupported
     case NetworkIsStopped
+    case fdbApiError(Int32, String?)
 }

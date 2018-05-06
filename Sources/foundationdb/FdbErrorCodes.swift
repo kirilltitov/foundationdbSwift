@@ -16,10 +16,7 @@
 
 import Foundation
 
-class Cluster {
-    private let clusterPointer : OpaquePointer
-    
-    init(clusterPointer : OpaquePointer) {
-        self.clusterPointer = clusterPointer
-    }
+enum FdbErrorCodes : Int32 {
+
+    case versionNotSupported = 2203
 }

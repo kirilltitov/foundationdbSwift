@@ -21,10 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		7E66305C209BB9BD0091F2B9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E66305B209BB9BD0091F2B9 /* Extensions.swift */; };
+		7EB6CAE8209A8CAA0099F262 /* FdbErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6CAE7209A8CAA0099F262 /* FdbErrorCodes.swift */; };
 		7EE646D02098922F00783E5C /* libfdb_c.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE646CF2098922F00783E5C /* libfdb_c.dylib */; };
 		7EE646D22099042D00783E5C /* NetworkOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D12099042D00783E5C /* NetworkOptions.swift */; };
 		7EE646D42099162100783E5C /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D32099162100783E5C /* Cluster.swift */; };
-		7EE646D6209922BD00783E5C /* FutureCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D5209922BD00783E5C /* FutureCluster.swift */; };
+		7EE646D6209922BD00783E5C /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D5209922BD00783E5C /* Future.swift */; };
 		7EE646D8209925C200783E5C /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE646D7209925C200783E5C /* Database.swift */; };
 		OBJ_24 /* FdbError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* FdbError.swift */; };
 		OBJ_25 /* Fdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Fdb.swift */; };
@@ -52,10 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E66305B209BB9BD0091F2B9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7EB6CAE7209A8CAA0099F262 /* FdbErrorCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FdbErrorCodes.swift; sourceTree = "<group>"; };
 		7EE646CF2098922F00783E5C /* libfdb_c.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfdb_c.dylib; path = ../../../../../../usr/local/lib/libfdb_c.dylib; sourceTree = "<group>"; };
 		7EE646D12099042D00783E5C /* NetworkOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOptions.swift; sourceTree = "<group>"; };
 		7EE646D32099162100783E5C /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
-		7EE646D5209922BD00783E5C /* FutureCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureCluster.swift; sourceTree = "<group>"; };
+		7EE646D5209922BD00783E5C /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		7EE646D7209925C200783E5C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Fdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fdb.swift; sourceTree = "<group>"; };
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -128,7 +132,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -138,7 +142,6 @@
 				OBJ_16 /* Products */,
 				7EE646CE2098922F00783E5C /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -156,8 +159,10 @@
 				OBJ_10 /* Fdb.swift */,
 				7EE646D12099042D00783E5C /* NetworkOptions.swift */,
 				7EE646D32099162100783E5C /* Cluster.swift */,
-				7EE646D5209922BD00783E5C /* FutureCluster.swift */,
+				7EE646D5209922BD00783E5C /* Future.swift */,
 				7EE646D7209925C200783E5C /* Database.swift */,
+				7EB6CAE7209A8CAA0099F262 /* FdbErrorCodes.swift */,
+				7E66305B209BB9BD0091F2B9 /* Extensions.swift */,
 			);
 			name = foundationdb;
 			path = Sources/foundationdb;
@@ -228,7 +233,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,10 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				7EB6CAE8209A8CAA0099F262 /* FdbErrorCodes.swift in Sources */,
 				7EE646D8209925C200783E5C /* Database.swift in Sources */,
 				OBJ_24 /* FdbError.swift in Sources */,
+				7E66305C209BB9BD0091F2B9 /* Extensions.swift in Sources */,
 				OBJ_25 /* Fdb.swift in Sources */,
-				7EE646D6209922BD00783E5C /* FutureCluster.swift in Sources */,
+				7EE646D6209922BD00783E5C /* Future.swift in Sources */,
 				7EE646D42099162100783E5C /* Cluster.swift in Sources */,
 				7EE646D22099042D00783E5C /* NetworkOptions.swift in Sources */,
 			);
